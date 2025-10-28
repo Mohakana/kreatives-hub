@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="#home" class="logo">
+                    <span class="logo-text">Kreatives Hub</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#Spaces">Spaces</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Community">Community</a></li>
+                    
+                    <li><a href="#Events">Events</a></li>
+                    <li><a href="#About">About</a></li>
+
+                </ul>
+                <div class="hamburger"> 
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="auth-buttons">
+                    <button class="login-btn">Login</button>
+                    <button class="signup-btn">Join hub</button>
+                </div>
+
+            </div>
+        </nav>
+        <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        document.querySelector('.btn-signup').addEventListener('click', () => {
+            alert('Sign Up button clicked!');
+             });
+              document.querySelector('.logo').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+             navLinks.forEach(link => link.classList.remove('active'));
+            document.querySelector('a[href="#home"]').classList.add('active');
+        });
+        </script>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Where <span class="highlight">Creative Minds</span> Collaborate</h1>
+    <h2>
+      Join Kreatives Hub, the ultimate collaborative space <br> where innovators 
+      gather to share ideas,<br>learn from each other, and work collectively on 
+      groundbreaking projects.
+    </h2>
+    <div class="hero-buttons">
+      <a href="#" class="btn primary">Start Collaborating</a>
+       </div>
+  </div>
+         <script>
+            window.addEventListener('load', () => {
+            document.querySelector('.hero').classList.add('fade-in');
+            });
+         </script>
+        </section>
+        <section class="main-content" id="spaces">
+            <h1>Everything You Need to <span class="highlight">Collaborate</span></h1>
+            <p>
+                From brainstorming sessions to project execution,<br> Kreatives Hub provides all the tools  and spaces you need for <br> successful collaboration.
+            </p>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="pic 1.png" alt="workspace 1">
+                    <h3>Event Planning</h3>
+                    <p>Organize parties, workshops, events, concerts and <br>networking events with built-in <br>collaboration tools.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="pic 2.png" alt="workspace 2">
+                    <h3>Project Management</h3>
+                    <p>Manage projects with task assignments, timelines, <br>and progress tracking to keep everyone on the same page.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="pic 3.png" alt="workspace 3">
+                    <h3>Creative Workshops</h3>
+                    <p>Host and attend workshops to learn new skills, share <br>knowledge, and foster creativity within the community.</p>
+
+                </div>
+                <div class="grid-item">
+                    <img src="pic 4.png" alt="workspace 4">
+                    <h3>Community Forums</h3>
+                    <p>Engage in discussions, share ideas, and seek advice from <br>a diverse community of creatives and professionals.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="pic 5.png" alt="workspace 5">
+                    <h3>Achieve Goals</h3>
+                    <p>Set collective goals, track progress,<br> and celebrate achievements as a <br>unified creative community.</p>
+                </div>
+            </div>
+        </section>
+        <section class="banner-stats">
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-icon" aria-hidden="true">
+                        <!-- Users icon -->
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Users">
+                            <path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V20h6v-3.5C23 14.17 18.33 13 16 13z"/>
+                        </svg>
+                    </div>
+                    <h3>1,200+</h3>
+                    <p>Active Members</p>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon" aria-hidden="true">
+                        <!-- Lightbulb icon -->
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ideas">
+                            <path fill="currentColor" d="M9 21h6v-1H9v1zm3-19C8.48 2 5 5.48 5 10c0 2.38 1.19 4.49 3 5.74V18h8v-2.26c1.81-1.25 3-3.36 3-5.74 0-4.52-3.48-8-8-8zM11 15.5V17h2v-1.5c1.45-.35 2.5-1.6 2.5-3 0-1.93-1.57-3.5-3.5-3.5S8.5 9.07 8.5 11c0 1.4 1.05 2.65 2.5 3.5z"/>
+                        </svg>
+                    </div>
+                    <h3>30+</h3>
+                    <p>Projects Created</p>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon" aria-hidden="true">
+                        <!-- Globe icon -->
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Global">
+                            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.93 6h-2.54c-.2-1.17-.6-2.25-1.17-3.18 1.96.68 3.38 2.2 3.71 3.18zM12 4c.9 1.16 1.53 2.58 1.83 4H10.17C10.47 6.58 11.1 5.16 12 4zM4.07 14C4.34 12.82 5.03 11.7 6.07 10.82 6.03 11.27 6 11.63 6 12s.03.73.07 1.18C5.03 13.3 4.34 12.18 4.07 14zM12 20c-.9-1.16-1.53-2.58-1.83-4h3.66c-.3 1.42-.93 2.84-1.83 4zM8.6 17.82c.54-.99 1.41-1.81 2.4-2.36.08.45.14.92.14 1.38s-.06.93-.14 1.38c-.99-.55-1.86-1.37-2.4-2.36zM17.93 18c-.27-1.82-.96-3.11-1.93-4.18.04-.45.07-.82.07-1.18s-.03-.73-.07-1.18c.97-1.07 1.66-2.36 1.93-4.18.37 1 .57 2.2.57 3.68 0 1.48-.2 2.68-.57 3.68z"/>
+                        </svg>
+                    </div>
+                    <h3>5</h3>
+                    <p>Countries Reached</p>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon" aria-hidden="true">
+                        <!-- Heart icon -->
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Love">
+                            <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4c1.74 0 3.41.81 4.5 2.09C12.09 4.81 13.76 4 15.5 4 18 4 20 6 20 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                    <h3>100%</h3>
+                    <p>Community Love</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Sign Up Section -->
+        <section id="signup" class="signup-section">
+            <div class="signup-container">
+                <h2>Join Our Creative Community</h2>
+                <p>Get started with Kreatives Hub today and connect with like-minded creators.</p>
+                <form class="signup-form">
+                    <div class="form-group">
+                        <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="signup-submit">Create Account</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+                <h2>Get in Touch</h2>
+                <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="contact-name" name="contact-name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contact-email" name="contact-email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="contact-submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Kreatives Hub</h3>
+      <p>Where creative minds connect, collaborate, and bring ideas to life. Join our growing community today!</p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+                <a href="#" aria-label="Facebook">
+                    <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img">
+                        <path fill="currentColor" d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07c0 4.99 3.66 9.12 8.44 9.93v-7.03H8.08v-2.9h2.36V9.41c0-2.33 1.38-3.62 3.5-3.62.99 0 2.03.18 2.03.18v2.23h-1.14c-1.13 0-1.48.7-1.48 1.42v1.7h2.52l-.4 2.9h-2.12V22C18.34 21.19 22 17.06 22 12.07z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img">
+                        <path fill="currentColor" d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 3a1 1 0 110 2 1 1 0 010-2zM12 8.2A3.8 3.8 0 1012 15.8 3.8 3.8 0 0012 8.2zm0 6.2a2.4 2.4 0 112.4-2.4A2.4 2.4 0 0112 14.4z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img">
+                        <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.38 8.59 8.59 0 01-2.72 1.04 4.28 4.28 0 00-7.29 3.9A12.14 12.14 0 013 4.8a4.28 4.28 0 001.33 5.72 4.24 4.24 0 01-1.94-.54v.05a4.28 4.28 0 003.44 4.2 4.3 4.3 0 01-1.93.07 4.28 4.28 0 003.99 2.97A8.59 8.59 0 012 19.54a12.11 12.11 0 006.57 1.92c7.88 0 12.2-6.53 12.2-12.2v-.56A8.72 8.72 0 0022.46 6z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img">
+                        <path fill="currentColor" d="M19 3A2 2 0 0121 5v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.34 17V10.5H6.22V17h2.12zM7.28 9.42a1.23 1.23 0 110-2.46 1.23 1.23 0 010 2.46zM18 17v-3.8c0-2.03-1.09-2.98-2.54-2.98-1.17 0-1.69.64-1.98 1.09V10.5h-2.12c.03.7 0 6.5 0 6.5h2.12v-3.63c0-.19.01-.38.07-.52.16-.37.51-.76 1.11-.76.78 0 1.09.57 1.09 1.41V17H18z"/>
+                    </svg>
+                </a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h4>Subscribe</h4>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Your Email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Kreatives Hub. All rights reserved.</p>
+  </div>
+</footer>
+
+       
+</body>
+</html>
